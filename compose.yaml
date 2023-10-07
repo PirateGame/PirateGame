@@ -6,7 +6,7 @@ services:
     environment:
       DATABASE_USER: example
       DATABASE_PASSWORD: example
-      DATABASE_HOST: mySql:3306
+      DATABASE_HOST: mysql:3306
       SOCKET_URL: back:1234
       PASSWORD: secret
       DATABASE_URL: mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@ ${DATABASE_HOST}/pg
@@ -20,7 +20,7 @@ services:
       JSON_SECRET: secret
       DATABASE_USER: example
       DATABASE_PASSWORD: example
-      DATABASE_HOST: mySql:3306
+      DATABASE_HOST: mysql:3306
       DATABASE_URL: mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@ ${DATABASE_HOST}/pg
 
   mysql:
