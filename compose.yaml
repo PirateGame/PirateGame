@@ -3,6 +3,8 @@ services:
     image: ghcr.io/pirategame/next-pirate-game:main
     ports:
       - 3050:3050
+    volumes:
+      - .:/pg-front
     environment:
       DATABASE_HOST: mySql:3306
       DATABASE_USER: example
@@ -14,6 +16,8 @@ services:
     image: ghcr.io/pirategame/game-pod:main
     ports:
       - 1234:1234
+    volumes:
+      - .:/pg-back
     environment:
       PORT: 1234
       JSON_SECRET: secret
@@ -24,10 +28,10 @@ services:
   mysql:
     image: mysql:8.0
     volumes:
-      - todo-mysql-data:/var/lib/mysql
+      - sql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: todos
 
 volumes:
-  todo-mysql-data:
+  sql:
