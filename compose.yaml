@@ -9,6 +9,7 @@ services:
       DATABASE_PASSWORD: example
       SOCKET_URL: back:1234
       PASSWORD: secret
+      DATABASE_URL: mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}/pg
       PORT: 3050
   back:
     image: ghcr.io/pirategame/game-pod:main
@@ -20,6 +21,7 @@ services:
       DATABASE_HOST: mySql:3306
       DATABASE_USER: example
       DATABASE_PASSWORD: example
+      DATABASE_URL: mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}/pg
 
   mysql:
     image: mysql:8.0
