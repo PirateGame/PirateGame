@@ -3,7 +3,6 @@ services:
     image: ghcr.io/pirategame/next-pirate-game:main
     ports:
       - 127.0.0.1:3050:3050
-    working_dir: /
     environment:
       DATABASE_HOST: mySql:3306
       DATABASE_USER: example
@@ -15,7 +14,6 @@ services:
     image: ghcr.io/pirategame/game-pod:main
     ports:
       - 127.0.0.1:1234:1234
-    working_dir: /
     environment:
       PORT: 1234
       JSON_SECRET: secret
