@@ -4,9 +4,9 @@ services:
     ports:
       - 3050:3050
     environment:
-      DATABASE_HOST: mySql:3306
       DATABASE_USER: example
       DATABASE_PASSWORD: example
+      DATABASE_HOST: mySql:3306
       SOCKET_URL: back:1234
       PASSWORD: secret
       DATABASE_URL: mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@ ${DATABASE_HOST}/pg
@@ -18,9 +18,9 @@ services:
     environment:
       PORT: 1234
       JSON_SECRET: secret
-      DATABASE_HOST: mySql:3306
       DATABASE_USER: example
       DATABASE_PASSWORD: example
+      DATABASE_HOST: mySql:3306
       DATABASE_URL: mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@ ${DATABASE_HOST}/pg
 
   mysql:
