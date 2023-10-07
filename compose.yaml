@@ -21,7 +21,7 @@ services:
       DATABASE_USER: example
       DATABASE_PASSWORD: example
       DATABASE_HOST: "mysql:3306"
-      DATABASE_URL: mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}/pg
+      DATABASE_URL: mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST-temp}/pg
 
   mysql:
     image: mysql:8.0
