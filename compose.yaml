@@ -1,0 +1,39 @@
+services:
+  front:
+    image: ghcr.io/pirategame/next-pirate-game
+    ports:
+      - 127.0.0.1:3000:3000
+    working_dir: /app
+    volumes:
+      - ./:/app
+    environment:
+      DATABASE_HOST: mySql:3306
+      DATABASE_USER: example
+      DATABASE_PASSWORD: example
+      SOCKET_URL: back:1234
+      PASSWORD: secret
+      PORT: 3050
+  back:
+    image: ghcr.io/pirategame/game-pod
+    ports:
+      - 127.0.0.1:1234:1234
+    working_dir: /app
+    volumes:
+      - ./:/app
+    environment:
+      PORT: 1234
+      JSON_SECRET: secret
+      DATABASE_HOST: mySql:3306
+      DATABASE_USER: example
+      DATABASE_PASSWORD: example
+
+  mysql:
+    image: mysql:8.0
+    volumes:
+      - todo-mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: todos
+
+volumes:
+  todo-mysql-data:
