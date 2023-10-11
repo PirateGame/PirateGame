@@ -34,7 +34,7 @@ services:
     ports:
       - 3306:3306
     environment:
-      DATABASE_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: pg
 
 volumes:
