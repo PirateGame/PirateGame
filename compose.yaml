@@ -1,6 +1,8 @@
 services:
   front:
     image: ghcr.io/pirategame/next-pirate-game:main
+    depends_on:
+      - mysql
     ports:
       - 3050:3050
     environment:
@@ -13,6 +15,8 @@ services:
       PORT: 3050
   back:
     image: ghcr.io/pirategame/game-pod:main
+    depends_on:
+      - mysql
     ports:
       - 1234:1234
     environment:
