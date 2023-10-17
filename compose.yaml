@@ -22,7 +22,7 @@ services:
     environment:
       PORT: 1234
       JSON_SECRET: secret
-      DATABASE_USER: example
+      DATABASE_USER: pg
       DATABASE_PASSWORD: example
       DATABASE_HOST: "mysql:3306"
       DATABASE_URL: mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST-temp}/pg
@@ -34,6 +34,8 @@ services:
     ports:
       - 3306:3306
     environment:
+      MYSQL_USER: pg
+      MYSQL_PASSWORD: example
       MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: pg
 
