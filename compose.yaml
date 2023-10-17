@@ -33,6 +33,7 @@ services:
       - sql:/var/lib/mysql
     ports:
       - 3306:3306
+    command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_USER: pg
       MYSQL_PASSWORD: example
