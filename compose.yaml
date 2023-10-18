@@ -10,7 +10,7 @@ services:
       DATABASE_USER: example
       DATABASE_PASSWORD: example
       DATABASE_HOST: mysql:3306
-      SOCKET_URL: back:1234
+      SOCKET_URL: url:1234
       PASSWORD: secret
       DATABASE_URL: mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}/pg
       PORT: 3050
