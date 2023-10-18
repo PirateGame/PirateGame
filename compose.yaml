@@ -33,8 +33,6 @@ services:
       - sql:/var/lib/mysql
     ports:
       - 3306:3306
-    expose:
-      - "3306"
     command: --default-authentication-plugin=caching_sha2_password
     environment:
       MYSQL_USER: test@localhost
