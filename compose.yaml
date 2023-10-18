@@ -33,7 +33,6 @@ services:
       - sql:/var/lib/mysql
     ports:
       - 3306:3306
-    entrypoint: mysqld_safe --skip-grant-tables --user=mysql
     environment:
       MYSQL_USER: test@localhost
       MYSQL_PASSWORD: example
