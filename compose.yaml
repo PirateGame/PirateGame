@@ -7,11 +7,11 @@ services:
     ports:
       - 3050:3050
     environment:
-      DATABASE_USER: example
-      DATABASE_PASSWORD: example
+      DATABASE_USER: ${DATABASE_USER}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
       DATABASE_HOST: mysql:3306
-      SOCKET_URL: url:1234
-      PASSWORD: secret
+      SOCKET_URL: ${SOCKET_URL}
+      PASSWORD: ${PASSWORD}
       DATABASE_URL: mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}/pg
       PORT: 3050
   back:
@@ -23,9 +23,9 @@ services:
       - 1234:1234
     environment:
       PORT: 1234
-      JSON_SECRET: secret
-      DATABASE_USER: pg
-      DATABASE_PASSWORD: example
+      JSON_SECRET: ${JSON_SECRET}
+      DATABASE_USER: ${DATABASE_USER}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
       DATABASE_HOST: mysql:3306
       DATABASE_URL: mysql://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST-temp}/pg
 
@@ -41,9 +41,9 @@ services:
       timeout: 20s
       retries: 10
     environment:
-      MYSQL_USER: test
-      MYSQL_PASSWORD: example
-      MYSQL_ROOT_PASSWORD: example
+      MYSQL_USER: ${DATABASE_USER}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
       MYSQL_DATABASE: pg
 
 volumes:
