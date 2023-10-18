@@ -33,7 +33,7 @@ services:
       - sql:/var/lib/mysql
     ports:
       - 3306:3306
-    command: --default-authentication-plugin=mysql_native_password
+    entrypoint: mysqld_safe --skip-grant-tables --user=mysql
     environment:
       MYSQL_USER: test@localhost
       MYSQL_PASSWORD: example
