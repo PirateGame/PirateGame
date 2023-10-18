@@ -33,7 +33,7 @@ services:
       - sql:/var/lib/mysql
     ports:
       - 3306:3306
-    command: --default-authentication-plugin=caching_sha2_password
+    command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_USER: test@localhost
       MYSQL_PASSWORD: example
